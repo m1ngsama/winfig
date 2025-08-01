@@ -75,6 +75,55 @@
         },
         {
           "properties": {
+            "prefix": " \ue235 ",
+            "display_mode": "files"
+          },
+          "leading_diamond": " \ue0b6",
+          "trailing_diamond": "\ue0b4",
+          "foreground": "#ffffff",
+          "background": "#4584b6",
+          "type": "python",
+          "style": "diamond"
+        },
+        {
+          "properties": {
+            "prefix": " \ue627 ",
+            "display_mode": "files"
+          },
+          "leading_diamond": " \ue0b6",
+          "trailing_diamond": "\ue0b4",
+          "foreground": "#ffffff",
+          "background": "#00acd7",
+          "type": "go",
+          "style": "diamond"
+        },
+        {
+          "properties": {
+            "prefix": " \uf308 ",
+            "display_mode": "files"
+          },
+          "leading_diamond": " \ue0b6",
+          "trailing_diamond": "\ue0b4",
+          "foreground": "#ffffff",
+          "background": "#0db7ed",
+          "type": "docker",
+          "style": "diamond"
+        },
+        {
+          "properties": {
+            "threshold": 500,
+            "style": "austin",
+            "prefix": " <#fefefe>\uf252</> "
+          },
+          "leading_diamond": " \ue0b6",
+          "trailing_diamond": "\ue0b4",
+          "foreground": "#ffffff",
+          "background": "#c4a000",
+          "type": "executiontime",
+          "style": "diamond"
+        },
+        {
+          "properties": {
             "postfix": " ",
             "prefix": " \udb80\udcf0 "
           },
