@@ -1,0 +1,138 @@
+[user]
+    # Set your name and email
+    name = your_name
+    email = your_email@example.com
+
+[core]
+    # Use UTF-8 encoding
+    quotepath = false
+    # Use nvim as default editor
+    editor = nvim
+    # Handle line endings automatically
+    autocrlf = true
+    # Improve performance on Windows
+    fscache = true
+    # Enable parallel index preload
+    preloadindex = true
+
+[color]
+    ui = auto
+    branch = auto
+    diff = auto
+    status = auto
+
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+
+[color "status"]
+    added = green
+    changed = yellow
+    untracked = red
+
+[alias]
+    # Common shortcuts
+    st = status
+    co = checkout
+    br = branch
+    ci = commit
+    cp = cherry-pick
+
+    # Commit aliases
+    cm = commit -m
+    ca = commit --amend
+    can = commit --amend --no-edit
+
+    # Log aliases
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    lga = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --all
+    ls = log --pretty=format:'%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]' --decorate
+    ll = log --pretty=format:'%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]' --decorate --numstat
+    last = log -1 HEAD --stat
+
+    # Diff aliases
+    df = diff
+    dfc = diff --cached
+    dft = difftool
+
+    # Branch management
+    brd = branch -d
+    brD = branch -D
+    bra = branch -a
+
+    # Remote management
+    rao = remote add origin
+    rso = remote show origin
+    rpo = remote prune origin
+
+    # Stash management
+    sl = stash list
+    sa = stash apply
+    ss = stash save
+    sp = stash pop
+    sd = stash drop
+
+    # Reset aliases
+    unstage = reset HEAD --
+    undo = reset --soft HEAD^
+
+    # Other useful commands
+    aliases = config --get-regexp alias
+    contributors = shortlog --summary --numbered
+    ignored = ls-files --others --ignored --exclude-standard
+    untracked = ls-files --others --exclude-standard
+
+    # Advanced workflows
+    sync = !git fetch origin && git rebase origin/$(git rev-parse --abbrev-ref HEAD)
+    cleanup = !git branch --merged | grep -v '\\*\\|main\\|master\\|develop' | xargs -n 1 git branch -d
+    wip = !git add -A && git commit -m 'WIP' --no-verify
+    unwip = !git log -n 1 | grep -q 'WIP' && git reset HEAD~1
+
+[push]
+    # Push current branch to upstream
+    default = current
+    # Push tags automatically
+    followTags = true
+
+[pull]
+    # Rebase instead of merge on pull
+    rebase = true
+
+[fetch]
+    # Prune deleted remote branches
+    prune = true
+
+[rebase]
+    # Automatically stash before rebase
+    autoStash = true
+
+[merge]
+    # Use better diff algorithm
+    conflictStyle = diff3
+    # Include summaries of merged commits
+    log = true
+
+[diff]
+    # Better diff algorithm
+    algorithm = histogram
+    # Enable rename detection
+    renames = true
+    # Detect copies as well as renames
+    copies = true
+
+[help]
+    # Auto-correct misspelled commands
+    autocorrect = 1
+
+[credential]
+    helper = wincred
+
+[init]
+    defaultBranch = main
