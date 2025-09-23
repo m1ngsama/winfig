@@ -1,0 +1,76 @@
+{
+  "description": "Essential development tools and utilities for Windows",
+  "buckets": [
+    "extras",
+    "nerd-fonts",
+    "versions"
+  ],
+  "packages": {
+    "essentials": [
+      "git",
+      "7zip",
+      "aria2",
+      "dark",
+      "sudo",
+      "grep",
+      "sed",
+      "less",
+      "curl",
+      "wget"
+    ],
+    "shells": [
+      "pwsh",
+      "oh-my-posh"
+    ],
+    "terminal": [
+      "windows-terminal",
+      "wezterm"
+    ],
+    "editors": [
+      "neovim",
+      "vscode"
+    ],
+    "development": [
+      "nodejs-lts",
+      "python",
+      "go",
+      "rust",
+      "gcc",
+      "make",
+      "cmake"
+    ],
+    "tools": [
+      "fzf",
+      "ripgrep",
+      "fd",
+      "bat",
+      "eza",
+      "zoxide",
+      "delta",
+      "lazygit",
+      "gh"
+    ],
+    "databases": [
+      "postgresql",
+      "redis",
+      "mysql"
+    ],
+    "cloud": [
+      "aws",
+      "azure-cli",
+      "terraform"
+    ],
+    "fonts": [
+      "CascadiaCode-NF",
+      "FiraCode-NF",
+      "JetBrainsMono-NF"
+    ],
+    "utilities": [
+      "everything",
+      "quicklook",
+      "powertoys",
+      "ditto",
+      "keypirinha"
+    ]
+  }
+}
