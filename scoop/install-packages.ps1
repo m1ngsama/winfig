@@ -26,9 +26,9 @@ function Install-Package {
     scoop install $packageName
 
     if ($LASTEXITCODE -eq 0) {
-        Write-ColorOutput "  ✓ Installed: $packageName" "Green"
+        Write-ColorOutput "  [OK] Installed: $packageName" "Green"
     } else {
-        Write-ColorOutput "  ✗ Failed: $packageName" "Red"
+        Write-ColorOutput "  [FAIL] Failed: $packageName" "Red"
     }
 }
 

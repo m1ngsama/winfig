@@ -30,14 +30,14 @@ function Backup-ConfigFile {
             }
 
             Copy-Item -Path $source -Destination $destination -Force
-            Write-ColorOutput "  ✓ Backed up: $description" "Green"
+            Write-ColorOutput "  [OK] Backed up: $description" "Green"
             return $true
         } catch {
-            Write-ColorOutput "  ✗ Failed: $description - $($_.Exception.Message)" "Red"
+            Write-ColorOutput "  [FAIL] Failed: $description - $($_.Exception.Message)" "Red"
             return $false
         }
     } else {
-        Write-ColorOutput "  ⚠ Not found: $description" "Yellow"
+        Write-ColorOutput "  [WARN] Not found: $description" "Yellow"
         return $false
     }
 }
@@ -103,7 +103,7 @@ $envVars = @{
     path = $env:PATH -split ";"
 }
 $envVars | ConvertTo-Json -Depth 10 | Set-Content $envBackupPath
-Write-ColorOutput "  ✓ Backed up: Environment variables" "Green"
+Write-ColorOutput "  [OK] Backed up: Environment variables" "Green"
 
 # Backup Scoop packages
 if ($IncludeScoopPackages -and (Get-Command scoop -ErrorAction SilentlyContinue)) {
@@ -131,7 +131,7 @@ if ($IncludeScoopPackages -and (Get-Command scoop -ErrorAction SilentlyContinue)
     }
 
     $scoopExport | ConvertTo-Json -Depth 10 | Set-Content (Join-Path $scoopBackupDir "packages.json")
-    Write-ColorOutput "  ✓ Backed up: $($installed.Count) Scoop packages" "Green"
+    Write-ColorOutput "  [OK] Backed up: $($installed.Count) Scoop packages" "Green"
     $backupInfo.scoop_packages = $installed.Count
 }
 
@@ -158,7 +158,7 @@ if ($Compress) {
     $archivePath = "$BackupPath.zip"
     Compress-Archive -Path $BackupPath -DestinationPath $archivePath -Force
     Remove-Item $BackupPath -Recurse -Force
-    Write-ColorOutput "  ✓ Compressed to: $archivePath" "Green"
+    Write-ColorOutput "  [OK] Compressed to: $archivePath" "Green"
     $finalPath = $archivePath
 } else {
     $finalPath = $BackupPath

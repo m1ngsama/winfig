@@ -29,7 +29,7 @@ function Restore-ConfigFile {
             if ((Test-Path $destination) -and -not $Force) {
                 $backup = "$destination.backup.$(Get-Date -Format 'yyyyMMdd-HHmmss')"
                 Copy-Item $destination $backup
-                Write-ColorOutput "  ⚠ Backed up existing: $backup" "Yellow"
+                Write-ColorOutput "  [WARN] Backed up existing: $backup" "Yellow"
             }
 
             $destDir = Split-Path $destination -Parent
@@ -38,14 +38,14 @@ function Restore-ConfigFile {
             }
 
             Copy-Item -Path $source -Destination $destination -Force
-            Write-ColorOutput "  ✓ Restored: $description" "Green"
+            Write-ColorOutput "  [OK] Restored: $description" "Green"
             return $true
         } catch {
-            Write-ColorOutput "  ✗ Failed: $description - $($_.Exception.Message)" "Red"
+            Write-ColorOutput "  [FAIL] Failed: $description - $($_.Exception.Message)" "Red"
             return $false
         }
     } else {
-        Write-ColorOutput "  ⚠ Not found in backup: $description" "Yellow"
+        Write-ColorOutput "  [WARN] Not found in backup: $description" "Yellow"
         return $false
     }
 }
@@ -108,7 +108,7 @@ if ($RestoreScoopPackages) {
     Write-Section "Scoop Packages"
 
     if (-not (Get-Command scoop -ErrorAction SilentlyContinue)) {
-        Write-ColorOutput "  ✗ Scoop is not installed" "Red"
+        Write-ColorOutput "  [FAIL] Scoop is not installed" "Red"
         Write-ColorOutput "  Install Scoop first: https://scoop.sh" "Yellow"
     } else {
         $scoopBackupPath = Join-Path $BackupPath "scoop\packages.json"
@@ -138,12 +138,12 @@ if ($RestoreScoopPackages) {
                 }
             }
 
-            Write-ColorOutput "  ✓ Installed: $installed packages" "Green"
+            Write-ColorOutput "  [OK] Installed: $installed packages" "Green"
             if ($failed -gt 0) {
-                Write-ColorOutput "  ✗ Failed: $failed packages" "Red"
+                Write-ColorOutput "  [FAIL] Failed: $failed packages" "Red"
             }
         } else {
-            Write-ColorOutput "  ⚠ No Scoop package list found in backup" "Yellow"
+            Write-ColorOutput "  [WARN] No Scoop package list found in backup" "Yellow"
         }
     }
 }

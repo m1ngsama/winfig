@@ -24,14 +24,14 @@ function Remove-ConfigFile {
     if (Test-Path $path) {
         if ($Force) {
             Remove-Item $path -Force
-            Write-ColorOutput "  ✓ Removed: $description" "Green"
+            Write-ColorOutput "  [OK] Removed: $description" "Green"
         } else {
             $backup = "$path.backup.$(Get-Date -Format 'yyyyMMdd-HHmmss')"
             Move-Item $path $backup
-            Write-ColorOutput "  ✓ Backed up to: $backup" "Green"
+            Write-ColorOutput "  [OK] Backed up to: $backup" "Green"
         }
     } else {
-        Write-ColorOutput "  ⚠ Not found: $description" "Yellow"
+        Write-ColorOutput "  [WARN] Not found: $description" "Yellow"
     }
 }
 
@@ -71,7 +71,7 @@ if ($RemoveModules) {
     foreach ($module in $modules) {
         if (Get-Module -ListAvailable -Name $module) {
             Uninstall-Module $module -Force -ErrorAction SilentlyContinue
-            Write-ColorOutput "  ✓ Removed: $module" "Green"
+            Write-ColorOutput "  [OK] Removed: $module" "Green"
         }
     }
 }
