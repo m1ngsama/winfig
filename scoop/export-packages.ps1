@@ -40,7 +40,7 @@ $export = @{
 # Save to JSON
 $export | ConvertTo-Json -Depth 10 | Set-Content $outputFile
 
-Write-ColorOutput "✓ Exported $($installed.Count) packages to: $outputFile" "Green"
+Write-ColorOutput "[OK] Exported $($installed.Count) packages to: $outputFile" "Green"
 Write-ColorOutput ""
 Write-ColorOutput "Buckets: $($buckets.Count)" "Cyan"
 Write-ColorOutput "Packages: $($installed.Count)" "Cyan"

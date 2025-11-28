@@ -42,9 +42,9 @@ function Copy-ConfigFile {
         }
 
         Copy-Item -Path $source -Destination $destination -Force
-        Write-ColorOutput "  ✓ Copied: $description" "Green"
+        Write-ColorOutput "  [OK] Copied: $description" "Green"
     } catch {
-        Write-ColorOutput "  ✗ Failed: $description - $($_.Exception.Message)" "Red"
+        Write-ColorOutput "  [FAIL] Failed: $description - $($_.Exception.Message)" "Red"
     }
 }
 
@@ -113,7 +113,7 @@ if (-not $SkipTerminal) {
             $backupPath = "$terminalSettingsPath.backup.$(Get-Date -Format 'yyyyMMdd-HHmmss')"
             if (-not $DryRun) {
                 Copy-Item $terminalSettingsPath $backupPath
-                Write-ColorOutput "  ✓ Backed up existing settings to: $backupPath" "Green"
+                Write-ColorOutput "  [OK] Backed up existing settings to: $backupPath" "Green"
             } else {
                 Write-ColorOutput "  [DRY RUN] Would backup to: $backupPath" "Yellow"
             }
@@ -121,7 +121,7 @@ if (-not $SkipTerminal) {
 
         Copy-ConfigFile $sourceTerminalSettings $terminalSettingsPath "Windows Terminal settings"
     } else {
-        Write-ColorOutput "  ⚠ Windows Terminal not found or not installed" "Yellow"
+        Write-ColorOutput "  [WARN] Windows Terminal not found or not installed" "Yellow"
     }
 }
 
@@ -130,13 +130,13 @@ if (-not $SkipScoop) {
     Write-Section "Scoop Package Manager"
 
     if (Get-Command scoop -ErrorAction SilentlyContinue) {
-        Write-ColorOutput "  ✓ Scoop is already installed" "Green"
+        Write-ColorOutput "  [OK] Scoop is already installed" "Green"
         Write-ColorOutput ""
         Write-ColorOutput "  Install packages with:" "Cyan"
         Write-ColorOutput "    cd scoop" "White"
         Write-ColorOutput "    .\install-packages.ps1" "White"
     } else {
-        Write-ColorOutput "  ✗ Scoop is not installed" "Red"
+        Write-ColorOutput "  [FAIL] Scoop is not installed" "Red"
         Write-ColorOutput ""
         Write-ColorOutput "  Install Scoop with:" "Yellow"
         Write-ColorOutput "    Set-ExecutionPolicy RemoteSigned -Scope CurrentUser" "White"

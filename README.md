@@ -1,19 +1,19 @@
 # winfig
 
-> Comprehensive Windows development environment configuration toolkit
+Comprehensive Windows development environment configuration toolkit
 
 Winfig is a curated collection of configurations, scripts, and utilities designed to transform your Windows terminal into a powerful, efficient development environment. Optimized for Windows Terminal, PowerShell, and modern development workflows.
 
 ## Features
 
-- **⚡ Performance Optimized PowerShell** - Lazy loading modules for faster startup
-- **🎨 Beautiful Terminal Theme** - Custom Oh-My-Posh configuration with context awareness
-- **🛠️ Comprehensive Utilities** - 40+ helper functions for faster workflow
-- **📦 Package Management** - Curated Scoop package lists with automated installation
-- **⚙️ Git Configuration** - Extensive aliases and optimized settings
-- **🖥️ Windows Terminal Settings** - Custom profiles, keybindings, and color schemes
-- **💾 Backup & Restore** - Easy configuration backup and migration
-- **🚀 Automated Setup** - One-command installation with smart defaults
+- Performance Optimized PowerShell - Lazy loading modules for faster startup
+- Terminal Theme - Custom Oh-My-Posh configuration with context awareness
+- Comprehensive Utilities - 40+ helper functions for faster workflow
+- Package Management - Curated Scoop package lists with automated installation
+- Git Configuration - Extensive aliases and optimized settings
+- Windows Terminal Settings - Custom profiles, keybindings, and color schemes
+- Backup & Restore - Easy configuration backup and migration
+- Automated Setup - One-command installation with smart defaults
 
 ## Quick Start
 
@@ -66,18 +66,18 @@ Close and reopen your terminal to see the changes.
 
 ## Components
 
-### 📁 PowerShell Profile
+### PowerShell Profile
 
-**Location**: `powershell/user_profile.ps1`
+Location: powershell/user_profile.ps1
 
-**Features**:
+Features:
 - Lazy loading for faster startup (50%+ improvement)
 - Enhanced PSReadLine with ListView predictions
 - 40+ utility functions and aliases
 - Git integration with shortcuts
 - Network and system utilities
 
-**Quick Functions**:
+Quick Functions:
 ```powershell
 # Directory navigation
 ..          # Up one level
@@ -100,11 +100,11 @@ which cmd   # Find command location
 c           # Open VS Code in current directory
 ```
 
-### 🎨 Oh-My-Posh Theme
+### Oh-My-Posh Theme
 
-**Location**: `powershell/m1ng.omp.json`
+Location: powershell/m1ng.omp.json
 
-**Features**:
+Features:
 - Modern powerline design
 - Git status integration
 - Node.js, Python, Go, Docker indicators
@@ -112,30 +112,30 @@ c           # Open VS Code in current directory
 - Time display
 - Root/admin indicator
 
-### 🖥️ Windows Terminal
+### Windows Terminal
 
-**Location**: `windows-terminal/settings.json`
+Location: windows-terminal/settings.json
 
-**Features**:
+Features:
 - Optimized for CaskaydiaCove Nerd Font
 - Custom color schemes (One Half Dark, Dracula)
 - Vim-inspired pane management keybindings
 - Profiles for PowerShell, CMD, WSL, Azure Cloud Shell
 - Performance optimizations
 
-**Key Bindings**:
-- `Alt+Shift+D` - Duplicate pane
-- `Alt+Shift+-` - Split horizontally
-- `Alt+Shift+|` - Split vertically
-- `Alt+Arrow Keys` - Navigate panes
-- `Ctrl+Shift+F` - Find
-- `Alt+Enter` - Fullscreen
+Key Bindings:
+- Alt+Shift+D - Duplicate pane
+- Alt+Shift+- - Split horizontally
+- Alt+Shift+| - Split vertically
+- Alt+Arrow Keys - Navigate panes
+- Ctrl+Shift+F - Find
+- Alt+Enter - Fullscreen
 
-### ⚙️ Git Configuration
+### Git Configuration
 
-**Location**: `git/.gitconfig`
+Location: git/.gitconfig
 
-**Features**:
+Features:
 - 30+ useful aliases
 - Histogram diff algorithm
 - Auto-stash before rebase
@@ -143,7 +143,7 @@ c           # Open VS Code in current directory
 - Auto-correct typos
 - Global gitignore
 
-**Useful Aliases**:
+Useful Aliases:
 ```bash
 git lg          # Beautiful graph log
 git sync        # Fetch and rebase
@@ -153,27 +153,27 @@ git unwip       # Undo WIP commit
 git aliases     # List all aliases
 ```
 
-### 📦 Scoop Packages
+### Scoop Packages
 
-**Location**: `scoop/packages.json`
+Location: scoop/packages.json
 
-**Categories**:
-- **Essentials**: git, 7zip, curl, wget, grep, sed
-- **Shells**: pwsh, oh-my-posh
-- **Terminal**: windows-terminal, wezterm
-- **Editors**: neovim, vscode
-- **Development**: nodejs, python, go, rust
-- **Tools**: fzf, ripgrep, bat, lazygit, delta
-- **Databases**: postgresql, redis, mysql
-- **Cloud**: aws-cli, azure-cli, terraform
-- **Fonts**: Nerd Fonts (CascadiaCode, FiraCode, JetBrainsMono)
-- **Utilities**: everything, quicklook, powertoys
+Categories:
+- Essentials: git, 7zip, curl, wget, grep, sed
+- Shells: pwsh, oh-my-posh
+- Terminal: windows-terminal, wezterm
+- Editors: neovim, vscode
+- Development: nodejs, python, go, rust
+- Tools: fzf, ripgrep, bat, lazygit, delta
+- Databases: postgresql, redis, mysql
+- Cloud: aws-cli, azure-cli, terraform
+- Fonts: Nerd Fonts (CascadiaCode, FiraCode, JetBrainsMono)
+- Utilities: everything, quicklook, powertoys
 
-### 🔧 Tmux Configuration
+### Tmux Configuration
 
-**Location**: `tmux/`
+Location: tmux/
 
-**Features**:
+Features:
 - Custom prefix key (Ctrl+T)
 - Vim-style navigation
 - Custom theme and statusline
@@ -215,7 +215,7 @@ cd scoop
 .\export-packages.ps1
 ```
 
-Creates `installed-packages.json` with your current setup.
+Creates installed-packages.json with your current setup.
 
 ### Uninstall
 
@@ -234,11 +234,11 @@ Creates `installed-packages.json` with your current setup.
 
 ### PowerShell Profile
 
-Edit `powershell/user_profile.ps1` to add your own functions and aliases.
+Edit powershell/user_profile.ps1 to add your own functions and aliases.
 
 ### Oh-My-Posh Theme
 
-Customize `powershell/m1ng.omp.json` or create your own theme:
+Customize powershell/m1ng.omp.json or create your own theme:
 ```powershell
 # Browse themes
 Get-PoshThemes
@@ -249,7 +249,7 @@ oh-my-posh init pwsh --config ~/theme.omp.json | Invoke-Expression
 
 ### Git Configuration
 
-Edit `git/.gitconfig` or override specific settings:
+Edit git/.gitconfig or override specific settings:
 ```powershell
 git config --global user.name "Your Name"
 git config --global user.email "your@email.com"
@@ -257,7 +257,7 @@ git config --global user.email "your@email.com"
 
 ### Windows Terminal
 
-Customize `windows-terminal/settings.json` for your preferences:
+Customize windows-terminal/settings.json for your preferences:
 - Change color scheme
 - Modify keybindings
 - Add custom profiles
@@ -330,38 +330,38 @@ git config --global user.email "your@email.com"
 
 2. Set font in Windows Terminal:
    - Open Settings (Ctrl+,)
-   - Appearance → Font face → CaskaydiaCove Nerd Font
+   - Appearance -> Font face -> CaskaydiaCove Nerd Font
 
 ## Project Structure
 
 ```
 winfig/
-├── powershell/           # PowerShell profile and theme
-│   ├── user_profile.ps1  # Main profile
-│   └── m1ng.omp.json     # Oh-My-Posh theme
-├── windows-terminal/     # Windows Terminal settings
-│   ├── settings.json     # Terminal configuration
-│   └── README.md
-├── git/                  # Git configuration
-│   ├── .gitconfig        # Git config with aliases
-│   ├── .gitignore_global # Global gitignore
-│   └── README.md
-├── scoop/                # Package management
-│   ├── packages.json     # Package list
-│   ├── install-packages.ps1
-│   ├── export-packages.ps1
-│   └── README.md
-├── tmux/                 # Tmux configuration
-│   ├── tmux.conf
-│   ├── theme.conf
-│   ├── statusline.conf
-│   ├── utility.conf
-│   └── macos.conf
-├── setup.ps1             # Automated setup
-├── uninstall.ps1         # Uninstall script
-├── backup.ps1            # Backup configurations
-├── restore.ps1           # Restore from backup
-└── README.md             # This file
+|-- powershell/
+|   |-- user_profile.ps1
+|   `-- m1ng.omp.json
+|-- windows-terminal/
+|   |-- settings.json
+|   `-- README.md
+|-- git/
+|   |-- .gitconfig
+|   |-- .gitignore_global
+|   `-- README.md
+|-- scoop/
+|   |-- packages.json
+|   |-- install-packages.ps1
+|   |-- export-packages.ps1
+|   `-- README.md
+|-- tmux/
+|   |-- tmux.conf
+|   |-- theme.conf
+|   |-- statusline.conf
+|   |-- utility.conf
+|   `-- macos.conf
+|-- setup.ps1
+|-- uninstall.ps1
+|-- backup.ps1
+|-- restore.ps1
+`-- README.md
 ```
 
 ## Tips & Tricks
@@ -402,9 +402,9 @@ Remove-Item $env:TEMP\* -Recurse -Force -ErrorAction SilentlyContinue
 ### Keyboard Maestro
 
 Combine winfig with keyboard launchers:
-- **Keypirinha** - Fast launcher (included in Scoop packages)
-- **PowerToys Run** - Microsoft's launcher
-- **Everything** - Fast file search
+- Keypirinha - Fast launcher (included in Scoop packages)
+- PowerToys Run - Microsoft's launcher
+- Everything - Fast file search
 
 ## Contributing
 
@@ -420,16 +420,12 @@ MIT License - See LICENSE file for details
 
 ## Acknowledgments
 
-- [Oh-My-Posh](https://ohmyposh.dev/) - Prompt theme engine
-- [Scoop](https://scoop.sh/) - Package manager for Windows
-- [Windows Terminal](https://github.com/microsoft/terminal) - Modern terminal
-- [Nerd Fonts](https://www.nerdfonts.com/) - Patched fonts with icons
+- Oh-My-Posh (https://ohmyposh.dev/) - Prompt theme engine
+- Scoop (https://scoop.sh/) - Package manager for Windows
+- Windows Terminal (https://github.com/microsoft/terminal) - Modern terminal
+- Nerd Fonts (https://www.nerdfonts.com/) - Patched fonts with icons
 
 ## Author
 
-**m1ngsama**
-- GitHub: [@m1ngsama](https://github.com/m1ngsama)
-
----
-
-⭐ If you find winfig useful, please consider giving it a star!
+m1ngsama
+GitHub: @m1ngsama (https://github.com/m1ngsama)
